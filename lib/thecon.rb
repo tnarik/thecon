@@ -5,13 +5,13 @@ require 'socket'
 
 module Thecon
   # Your code goes here...
-  def test
+  def test(ip = "85.205.228.219")
   	result = false
 		begin
   		timeout(20) do
         s = Socket.new :INET, :STREAM
         #a = Socket.pack_sockaddr_in 80, "www.google.com"
-        a = Socket.pack_sockaddr_in 2401, "85.205.228.219"
+        a = Socket.pack_sockaddr_in 2401, ip
         s.connect a
         begin
           #s.recvfrom_nonblock(2)
@@ -19,13 +19,8 @@ module Thecon
           #p "fin de la primera parte" if (leo == "")   #External from home for 2401, "85.205.228.219"
           
           timeout(5) do
-#            p "tryyy"
-            #j = s.recv 0
-#            p "asdf"
+
             r,w,e = select([s], nil, nil, 1)
-#           p r 
-#           p w
-#           p e
             # nil, nil, nil from inside the network
             unless r.nil?  then
               p "socket was closed" if ( r[0].read(1).nil? )
@@ -54,7 +49,7 @@ module Thecon
         #  #end
         #  p "goatchas"
         #end
-          result = true
+        result = true
       end
     rescue Errno::ECONNREFUSED, Errno::EHOSTUNREACH
       p "a"
@@ -65,6 +60,7 @@ module Thecon
       result=false
     rescue
     end
+    return result
   end
 
 end

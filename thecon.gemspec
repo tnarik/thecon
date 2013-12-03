@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Thecon::VERSION
   gem.authors       = ["tnarik"]
   gem.email         = ["tnarik@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Simple connection checker to find out if a server is available at a certain port}
+  gem.summary       = %q{Attempt a connection to a certain IP (or hostname), port}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
