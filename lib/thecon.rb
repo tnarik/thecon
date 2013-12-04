@@ -22,6 +22,7 @@ module Thecon
               p "not available for read: either doesn't exist or not closed" #TRUE
               result = true
             end
+          end
         rescue StandardError => ka
           p "OK, standardERROR #{ka}" #If socket.read there could be errors (this shouldn't be triggered)
           result = true
