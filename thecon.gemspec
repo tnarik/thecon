@@ -18,5 +18,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   # devevelopment dependencies  
-  gem.add_development_dependency "thor"
+  gem.add_development_dependency "rspec"
 end
