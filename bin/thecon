@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+# encoding: UTF-8
+$: << File.dirname(__FILE__) + '/../lib'
+
+require 'thecon'
+
+puts Thecon.ready?(ARGV[1], ARGV[0]).to_s
