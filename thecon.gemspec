@@ -1,22 +1,23 @@
-# -*- encoding: utf-8 -*-
+# coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'thecon/version'
 
-Gem::Specification.new do |gem|
-  gem.name          = "thecon"
-  gem.version       = Thecon::VERSION
-  gem.authors       = ["tnarik"]
-  gem.email         = ["tnarik@gmail.com"]
-  gem.description   = %q{Simple connection checker to find out if a server is available at a certain port}
-  gem.summary       = %q{Attempt a connection to a certain IP (or hostname), port}
-  gem.homepage      = ""
+Gem::Specification.new do |spec|
+  spec.name          = "thecon"
+  spec.version       = Thecon::VERSION
+  spec.authors       = ["Tnarik Innael"]
+  spec.email         = ["tnarik@lecafeautomatique.co.uk"]
+  spec.summary       = %q{Attempt a connection to a certain IP (or hostname), port}
+  spec.description   = %q{Simple connection checker to find out if a server is available at a certain port}
+  spec.homepage      = "https://github.com/tnarik/thecon"
+  spec.license       = "MIT"
 
-  gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.require_paths = ["lib"]
+  spec.files         = `git ls-files`.split($/)
+  spec.executables   = spec.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
 
-  # devevelopment dependencies  
-  gem.add_development_dependency "rspec"
+  # development dependencies  
+  spec.add_development_dependency "rspec"
 end
