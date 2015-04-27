@@ -18,8 +18,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
-
+    $ thecon <hostname> <port>
+    
 ## Contributing
 
 1. Fork it
